@@ -9,5 +9,6 @@ script_dir=$(dirname "$0")
 source "$script_dir/10-git.sh"
 source "$script_dir/20-poetry.sh"
 source "$script_dir/21-flake.sh"
+source "$script_dir/22-isort.sh"
 source "$script_dir/30-django.sh"
 source "$script_dir/31-django-environ.sh"

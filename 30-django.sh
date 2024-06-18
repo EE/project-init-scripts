@@ -12,6 +12,7 @@ fi
 # Run django-admin startproject with the project name
 poetry run django-admin startproject "$DJANGO_PROJECT_NAME" .
 
+poetry run isort .
 poetry run flake8
 git add --all
 git commit -m "Initialize Django project with project name: $DJANGO_PROJECT_NAME"
