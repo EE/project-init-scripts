@@ -29,7 +29,6 @@ cat <<EOF >> "README.md"
 Configure quick-start env vars
 
     cp example.env .env
-
 EOF
 
 poetry run isort .

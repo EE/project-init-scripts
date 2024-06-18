@@ -11,6 +11,7 @@ pushd "$tmp_dir"
 
 # Execute the pipeline script from the original directory
 "$original_dir/everything.sh"
+success=$?
 
 # Navigate back to the original directory
 popd
@@ -18,4 +19,9 @@ popd
 # Remove the temporary directory
 rm -rf "$tmp_dir"
 
-echo "Testing completed successfully!"
+if [ $success -ne 0 ]; then
+    echo "Testing failed!"
+    exit 1
+else
+    echo "Testing completed successfully!"
+fi

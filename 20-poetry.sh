@@ -24,6 +24,21 @@ poetry install
 # add python stuff to gitignore
 echo "__pycache__/" >> .gitignore
 
+# describe in the README
+cat <<EOF >> "README.md"
+# $POETRY_PROJECT_NAME
+
+## Python deps
+
+This project uses Poetry for dependency management. To install the dependencies, run:
+
+    poetry install
+
+To activate the virtual environment, run:
+
+    poetry shell
+EOF
+
 git add --all
 git commit -m "Initialize Poetry environment"
 

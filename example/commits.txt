@@ -2,9 +2,10 @@
 --- Initialize Poetry environment
 
  .gitignore     |  1 +
+ README.md      | 11 +++++++++++
  poetry.lock    |  7 +++++++
  pyproject.toml | 14 ++++++++++++++
- 3 files changed, 22 insertions(+)
+ 4 files changed, 33 insertions(+)
 
 --- Install and configure Flake8 with flake8-pyproject
 
@@ -33,12 +34,12 @@
 --- Configure Django settings with django-environ
 
  .gitignore          |  1 +
- README.md           |  7 +++++++
+ README.md           |  6 ++++++
  example.env         |  3 +++
  example/settings.py | 15 ++++++++-------
  poetry.lock         | 18 +++++++++++++++++-
  pyproject.toml      |  1 +
- 6 files changed, 37 insertions(+), 8 deletions(-)
+ 6 files changed, 36 insertions(+), 8 deletions(-)
 
 --- Install psycopg for PostgreSQL support
 
