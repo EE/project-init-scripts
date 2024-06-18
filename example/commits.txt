@@ -1,0 +1,39 @@
+
+--- Initialize Poetry environment
+
+ poetry.lock    |  7 +++++++
+ pyproject.toml | 14 ++++++++++++++
+ 2 files changed, 21 insertions(+)
+
+--- Install and configure Flake8 with flake8-pyproject
+
+ poetry.lock    | 68 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ pyproject.toml |  9 ++++++++
+ 2 files changed, 75 insertions(+), 2 deletions(-)
+
+--- Install and configure isort with flake8-isort
+
+ poetry.lock    | 34 +++++++++++++++++++++++++++++++++-
+ pyproject.toml |  8 ++++++++
+ 2 files changed, 41 insertions(+), 1 deletion(-)
+
+--- Initialize Django project with project name: example
+
+ example/__init__.py |   0
+ example/asgi.py     |  17 +++++++
+ example/settings.py | 124 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ example/urls.py     |  23 ++++++++++
+ example/wsgi.py     |  17 +++++++
+ manage.py           |  22 ++++++++++
+ poetry.lock         |  62 +++++++++++++++++++++++++-
+ pyproject.toml      |   1 +
+ 8 files changed, 265 insertions(+), 1 deletion(-)
+
+--- Configure Django settings with django-environ
+
+ .gitignore          |  1 +
+ example.env         |  3 +++
+ example/settings.py | 15 ++++++++-------
+ poetry.lock         | 18 +++++++++++++++++-
+ pyproject.toml      |  1 +
+ 5 files changed, 30 insertions(+), 8 deletions(-)
