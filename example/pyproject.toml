@@ -11,6 +11,7 @@ django = "*"
 django-environ = "*"
 psycopg = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 
 [tool.poetry.group.dev.dependencies]

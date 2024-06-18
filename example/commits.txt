@@ -55,6 +55,14 @@
  pyproject.toml      |  1 +
  4 files changed, 26 insertions(+), 1 deletion(-)
 
+--- Configure the project for Heroku deployment
+
+ Procfile       |  2 ++
+ app.json       | 26 ++++++++++++++++++++++++++
+ poetry.lock    | 34 +++++++++++++++++++++++++++++++++-
+ pyproject.toml |  1 +
+ 4 files changed, 62 insertions(+), 1 deletion(-)
+
 --- Custom user model using UUID4 as the primary key
 
  example/settings.py              |  2 ++
