@@ -22,8 +22,8 @@
 --- Install and configure pytest
 
  poetry.lock    | 70 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
- pyproject.toml |  3 +++
- 2 files changed, 72 insertions(+), 1 deletion(-)
+ pyproject.toml |  4 ++++
+ 2 files changed, 73 insertions(+), 1 deletion(-)
 
 --- Initialize Django project
 

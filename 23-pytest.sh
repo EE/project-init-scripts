@@ -1,8 +1,9 @@
 poetry add --group dev 'pytest==*'
 
 cat >> pyproject.toml <<EOL
+
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "$DJANGO_PROJECT_NAME.settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
 EOL
 
 git add --all
