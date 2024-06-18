@@ -8,13 +8,12 @@ fi
 # Check if the POETRY_PROJECT_NAME environment variable is set
 if [[ -z "$POETRY_PROJECT_NAME" ]]; then
     echo "POETRY_PROJECT_NAME environment variable is not set. Using the current directory name as the project name."
-    poetry_project_name=$(basename "$PWD")
-else
-    poetry_project_name="$POETRY_PROJECT_NAME"
+    POETRY_PROJECT_NAME=$(basename "$PWD")
+    export POETRY_PROJECT_NAME
 fi
 
 # Initialize a new Poetry project with the project name
-poetry init --name "$poetry_project_name" --no-interaction
+poetry init --name "$POETRY_PROJECT_NAME" --no-interaction
 
 # Switch to non-package-mode
 sed -i '/^version =/c package-mode = false' pyproject.toml
@@ -26,4 +25,4 @@ git add --all
 git commit -m "Initialize Poetry environment"
 
 # Print success message
-echo "Empty Poetry environment initialized successfully with project name: $poetry_project_name"
+echo "Empty Poetry environment initialized successfully with project name: $POETRY_PROJECT_NAME"
