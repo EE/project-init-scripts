@@ -10,7 +10,5 @@ ignore = [
 ]
 EOL
 
-poetry run flake8
-
 git add --all
 git commit -m "Install and configure Flake8 with flake8-pyproject"

@@ -19,13 +19,6 @@ EOL
 # gitignore the staticfiles directory
 echo "staticfiles/" >> .gitignore
 
-# collectstatic to fail early
-poetry run python manage.py collectstatic --no-input
-
-# Format and lint the code
-poetry run isort .
-poetry run flake8
-
 # Commit the changes
 git add --all
 git commit -m "Configure WhiteNoise for serving static files"

@@ -13,6 +13,5 @@ fi
 poetry run django-admin startproject "$DJANGO_PROJECT_NAME" .
 
 poetry run isort .
-poetry run flake8
 git add --all
 git commit -m "Initialize Django project"

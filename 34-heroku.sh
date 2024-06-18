@@ -26,7 +26,8 @@ cat > app.json <<EOL
     "SECRET_KEY": {
       "description": "Django secret key",
       "generator": "secret"
-    }
+    },
+    "ALLOWED_HOSTS": "*"
   },
   "formation": {
     "web": {
@@ -36,10 +37,6 @@ cat > app.json <<EOL
   }
 }
 EOL
-
-# Format and lint the code
-poetry run isort .
-poetry run flake8
 
 # Commit the changes
 git add --all

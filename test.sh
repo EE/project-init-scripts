@@ -1,7 +1,11 @@
 #!/bin/bash
+set -e # Exit immediately if a command exits with a non-zero status
+set -o pipefail # Prevent errors in a pipeline from being masked
 
 # Create a temporary directory
 tmp_dir=$(mktemp -d)
+
+trap 'rm -rf "$tmp_dir"' EXIT
 
 # Store the current directory
 original_dir=$(pwd)
@@ -12,16 +16,9 @@ pushd "$tmp_dir"
 # Execute the pipeline script from the original directory
 "$original_dir/everything.sh"
 success=$?
+poetry run flake8
+poetry run python manage.py collectstatic --no-input
+poetry run pytest
 
 # Navigate back to the original directory
 popd
-
-# Remove the temporary directory
-rm -rf "$tmp_dir"
-
-if [ $success -ne 0 ]; then
-    echo "Testing failed!"
-    exit 1
-else
-    echo "Testing completed successfully!"
-fi

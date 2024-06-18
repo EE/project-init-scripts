@@ -13,7 +13,6 @@ include_trailing_comma = true
 EOL
 
 poetry run isort .
-poetry run flake8
 
 git add --all
 git commit -m "Install and configure isort with flake8-isort"

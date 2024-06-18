@@ -25,9 +25,7 @@ echo "AUTH_USER_MODEL = 'users.User'" >> "$DJANGO_PROJECT_NAME/settings.py"
 # Create initial migration for the 'users' app
 poetry run python manage.py makemigrations --no-header
 
-# Format and lint the code
 poetry run isort .
-poetry run flake8
 
 # Commit the changes
 git add --all

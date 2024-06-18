@@ -19,6 +19,12 @@
  pyproject.toml |  8 ++++++++
  2 files changed, 41 insertions(+), 1 deletion(-)
 
+--- Install and configure pytest
+
+ poetry.lock    | 70 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml |  3 +++
+ 2 files changed, 72 insertions(+), 1 deletion(-)
+
 --- Initialize Django project
 
  example/__init__.py |   0
@@ -58,10 +64,10 @@
 --- Configure the project for Heroku deployment
 
  Procfile       |  2 ++
- app.json       | 26 ++++++++++++++++++++++++++
- poetry.lock    | 34 +++++++++++++++++++++++++++++++++-
+ app.json       | 27 +++++++++++++++++++++++++++
+ poetry.lock    | 23 ++++++++++++++++++++++-
  pyproject.toml |  1 +
- 4 files changed, 62 insertions(+), 1 deletion(-)
+ 4 files changed, 52 insertions(+), 1 deletion(-)
 
 --- Custom user model using UUID4 as the primary key
 

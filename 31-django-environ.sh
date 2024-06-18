@@ -32,6 +32,5 @@ Configure quick-start env vars
 EOF
 
 poetry run isort .
-poetry run flake8
 git add --all
 git commit -m "Configure Django settings with django-environ"
