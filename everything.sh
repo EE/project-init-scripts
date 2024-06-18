@@ -4,5 +4,7 @@
 script_dir=$(dirname "$0")
 
 # Execute the initialization scripts
-"$script_dir/10-git.sh"
-"$script_dir/20-poetry.sh"
+source "$script_dir/10-git.sh"
+source "$script_dir/20-poetry.sh"
+source "$script_dir/30-django.sh"
+source "$script_dir/31-django-environ.sh"
