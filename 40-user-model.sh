@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Start a new Django app called 'users'
 poetry run python manage.py startapp users
 
@@ -25,7 +23,7 @@ rm users/admin.py users/views.py users/tests.py
 echo "AUTH_USER_MODEL = 'users.User'" >> "$DJANGO_PROJECT_NAME/settings.py"
 
 # Create initial migration for the 'users' app
-poetry run python manage.py makemigrations
+poetry run python manage.py makemigrations --no-header
 
 # Format and lint the code
 poetry run isort .
@@ -33,6 +31,4 @@ poetry run flake8
 
 # Commit the changes
 git add --all
-git commit -m "Create 'users' app with a custom user model using UUID4 as the primary key"
-
-echo "Custom user model with UUID4 primary key created in the 'users' app."
+git commit -m "Custom user model using UUID4 as the primary key"

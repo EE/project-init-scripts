@@ -10,6 +10,7 @@ python = "^3.12"
 django = "*"
 django-environ = "*"
 psycopg = "*"
+whitenoise = "*"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Install flake8-isort
 poetry add --group dev 'flake8-isort==*'
 
@@ -19,5 +17,3 @@ poetry run flake8
 
 git add --all
 git commit -m "Install and configure isort with flake8-isort"
-
-echo "flake8-isort installed and configured."

@@ -35,5 +35,3 @@ poetry run isort .
 poetry run flake8
 git add --all
 git commit -m "Configure Django settings with django-environ"
-
-echo "Django settings patched with django-environ and example.env file created."

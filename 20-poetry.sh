@@ -41,6 +41,3 @@ EOF
 
 git add --all
 git commit -m "Initialize Poetry environment"
-
-# Print success message
-echo "Empty Poetry environment initialized successfully with project name: $POETRY_PROJECT_NAME"
