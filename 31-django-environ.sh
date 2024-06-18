@@ -18,6 +18,20 @@ EOF
 # Add .env to .gitignore
 echo ".env" >> .gitignore
 
+# make our .env file
+cp example.env .env
+
+# describe in the README
+cat <<EOF >> "README.md"
+
+## Environment Variables
+
+Configure quick-start env vars
+
+    cp example.env .env
+
+EOF
+
 poetry run isort .
 poetry run flake8
 git add --all

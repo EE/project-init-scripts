@@ -21,6 +21,9 @@ sed -i '/^version =/c package-mode = false' pyproject.toml
 # Create an empty virtual environment
 poetry install
 
+# add python stuff to gitignore
+echo "__pycache__/" >> .gitignore
+
 git add --all
 git commit -m "Initialize Poetry environment"
 
