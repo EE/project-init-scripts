@@ -20,7 +20,10 @@ EOL
 rm users/admin.py users/views.py users/tests.py
 
 # Update the settings.py file to use the custom user model
-echo "AUTH_USER_MODEL = 'users.User'" >> "$DJANGO_PROJECT_NAME/settings.py"
+cat <<EOF >> "$DJANGO_PROJECT_NAME/settings.py"
+
+AUTH_USER_MODEL = 'users.User'
+EOF
 
 # Create initial migration for the 'users' app
 poetry run env $(cat example.env) python manage.py makemigrations --no-header

@@ -11,6 +11,7 @@ django = "*"
 django-environ = "*"
 psycopg = "*"
 whitenoise = "*"
+sentry-sdk = {version = "*", extras = ["django"]}
 gunicorn = "*"
 
 

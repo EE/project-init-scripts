@@ -22,5 +22,10 @@ cp example.env .env
 poetry run python manage.py collectstatic --no-input
 poetry run pytest
 
+# remove the virtual env, it may be stored outside the temporary directory
+poetry env remove --all
+
 # Navigate back to the original directory
 popd
+
+echo "All good!"

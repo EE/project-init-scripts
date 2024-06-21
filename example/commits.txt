@@ -67,6 +67,13 @@
  pyproject.toml      |  1 +
  4 files changed, 26 insertions(+), 1 deletion(-)
 
+--- Install and configure Sentry
+
+ example/settings.py |  8 ++++++
+ poetry.lock         | 81 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml      |  1 +
+ 3 files changed, 89 insertions(+), 1 deletion(-)
+
 --- Configure the project for Heroku deployment
 
  Procfile       |  2 ++
@@ -77,10 +84,10 @@
 
 --- Custom user model using UUID4 as the primary key
 
- example/settings.py              |  2 ++
+ example/settings.py              |  3 +++
  users/__init__.py                |  0
  users/apps.py                    |  6 ++++++
  users/migrations/0001_initial.py | 44 ++++++++++++++++++++++++++++++++++++++++
  users/migrations/__init__.py     |  0
  users/models.py                  |  8 ++++++++
- 6 files changed, 60 insertions(+)
+ 6 files changed, 61 insertions(+)
