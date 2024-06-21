@@ -1,0 +1,14 @@
+name: Run tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - uses: snok/install-poetry@v1
+      - name: Configure git
+        run: |
+          git config --global user.email "me@example.com"
+          git config --global user.name "My Name"
+      - run: ./test.sh
