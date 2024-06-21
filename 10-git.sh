@@ -7,5 +7,4 @@ fi
 # Initialize a new Git repository
 git init
 
-# Print success message
-echo "Git repository initialized successfully!"
+git commit --allow-empty -m "Initial commit"

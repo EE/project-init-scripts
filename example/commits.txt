@@ -1,4 +1,6 @@
 
+--- Initial commit
+
 --- Initialize Poetry environment
 
  .gitignore     |  1 +
