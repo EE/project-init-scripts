@@ -47,6 +47,12 @@
  pyproject.toml      |  1 +
  6 files changed, 36 insertions(+), 8 deletions(-)
 
+--- Force HTTPS traffic
+
+ example.env         | 1 +
+ example/settings.py | 9 +++++++++
+ 2 files changed, 10 insertions(+)
+
 --- Install psycopg for PostgreSQL support
 
  poetry.lock    | 36 +++++++++++++++++++++++++++++++++++-
@@ -64,10 +70,10 @@
 --- Configure the project for Heroku deployment
 
  Procfile       |  2 ++
- app.json       | 27 +++++++++++++++++++++++++++
+ app.json       | 28 ++++++++++++++++++++++++++++
  poetry.lock    | 23 ++++++++++++++++++++++-
  pyproject.toml |  1 +
- 4 files changed, 52 insertions(+), 1 deletion(-)
+ 4 files changed, 53 insertions(+), 1 deletion(-)
 
 --- Custom user model using UUID4 as the primary key
 

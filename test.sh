@@ -16,7 +16,9 @@ pushd "$tmp_dir"
 # Execute the pipeline script from the original directory
 "$original_dir/everything.sh"
 success=$?
+
 poetry run flake8
+cp example.env .env
 poetry run python manage.py collectstatic --no-input
 poetry run pytest
 

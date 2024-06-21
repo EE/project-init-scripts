@@ -23,7 +23,7 @@ rm users/admin.py users/views.py users/tests.py
 echo "AUTH_USER_MODEL = 'users.User'" >> "$DJANGO_PROJECT_NAME/settings.py"
 
 # Create initial migration for the 'users' app
-poetry run python manage.py makemigrations --no-header
+poetry run env $(cat example.env) python manage.py makemigrations --no-header
 
 poetry run isort .
 

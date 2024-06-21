@@ -27,7 +27,8 @@ cat > app.json <<EOL
       "description": "Django secret key",
       "generator": "secret"
     },
-    "ALLOWED_HOSTS": "*"
+    "ALLOWED_HOSTS": "*",
+    "SECURE_PROXY_SSL_HEADER": "HTTP_X_FORWARDED_PROTO,https"
   },
   "formation": {
     "web": {

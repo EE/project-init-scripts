@@ -18,9 +18,6 @@ EOF
 # Add .env to .gitignore
 echo ".env" >> .gitignore
 
-# make our .env file
-cp example.env .env
-
 # describe in the README
 cat <<EOF >> "README.md"
 
