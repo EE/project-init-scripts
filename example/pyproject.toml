@@ -26,6 +26,10 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.flake8]
+exclude = [
+    ".heroku",
+    ".local",
+]
 ignore = [
     "E501",  # line too long
 ]
