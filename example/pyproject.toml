@@ -20,6 +20,7 @@ flake8 = "*"
 flake8-pyproject = "*"
 flake8-isort = "*"
 pytest = "*"
+pytest-django = "*"
 
 [build-system]
 requires = ["poetry-core"]
@@ -42,4 +43,6 @@ multi_line_output = 5
 include_trailing_comma = true
 
 [tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "example.settings"
+FAIL_INVALID_TEMPLATE_VARS = true
 python_files = ["tests.py", "test_*.py", "*_tests.py"]

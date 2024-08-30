@@ -20,7 +20,7 @@ success=$?
 poetry run flake8
 cp example.env .env
 poetry run python manage.py collectstatic --no-input
-poetry run pytest || true  # allow it to fail
+poetry run pytest
 
 # remove the virtual env, it may be stored outside the temporary directory
 poetry env remove --all
