@@ -35,9 +35,10 @@
  example/urls.py     |  23 ++++++++++
  example/wsgi.py     |  17 +++++++
  manage.py           |  22 ++++++++++
- poetry.lock         |  62 +++++++++++++++++++++++++-
- pyproject.toml      |   1 +
- 8 files changed, 265 insertions(+), 1 deletion(-)
+ poetry.lock         |  80 ++++++++++++++++++++++++++++++++-
+ pyproject.toml      |   4 ++
+ test_no_smoke.py    |   8 ++++
+ 9 files changed, 294 insertions(+), 1 deletion(-)
 
 --- Configure Django settings with django-environ
 

@@ -12,3 +12,18 @@ jobs:
           git config --global user.email "me@example.com"
           git config --global user.name "My Name"
       - run: ./test.sh
+        env:
+          DATABASE_URL: postgresql://postgres:postgrespass@localhost:5432/testdb
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgrespass
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
