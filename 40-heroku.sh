@@ -35,9 +35,21 @@ cat > app.json <<EOL
       "quantity": 1,
       "size": "basic"
     }
+  },
+  "environments": {
+    "test": {
+      "addons": ["heroku-postgresql:in-dyno"],
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --no-input",
+        "test": "flake8 . && pytest"
+      }
+    }
   }
 }
 EOL
+
+# add heroku stuff to flake8 exclude
+sed -i '/\[tool\.flake8\]/a exclude = [\n    ".heroku",\n    ".local",\n]' pyproject.toml
 
 # Commit the changes
 git add --all
