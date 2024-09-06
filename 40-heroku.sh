@@ -41,7 +41,7 @@ cat > app.json <<EOL
       "addons": ["heroku-postgresql:in-dyno"],
       "scripts": {
         "test-setup": "python manage.py collectstatic --no-input",
-        "test": "flake8 . && pytest"
+        "test": "flake8 && pytest"
       }
     }
   }
