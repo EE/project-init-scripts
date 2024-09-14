@@ -94,3 +94,9 @@
  users/migrations/__init__.py     |  0
  users/models.py                  |  8 ++++++++
  6 files changed, 61 insertions(+)
+
+--- feat: Add robots.txt view and test
+
+ example/test_no_smoke.py | 5 +++++
+ example/urls.py          | 3 +++
+ 2 files changed, 8 insertions(+)
