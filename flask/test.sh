@@ -18,8 +18,6 @@ pushd "$tmp_dir"
 success=$?
 
 poetry run flake8
-cp example.env .env
-poetry run python manage.py collectstatic --no-input
 poetry run pytest
 
 # remove the virtual env, it may be stored outside the temporary directory
