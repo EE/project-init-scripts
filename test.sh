@@ -5,7 +5,7 @@ set -o pipefail # Prevent errors in a pipeline from being masked
 # Create a temporary directory
 tmp_dir=$(mktemp -d)
 
-trap 'rm -rf "$tmp_dir"' EXIT
+#trap 'rm -rf "$tmp_dir"' EXIT
 
 # Store the current directory
 original_dir=$(pwd)

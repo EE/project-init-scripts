@@ -1,11 +1,13 @@
 #!/bin/bash
 
+EXAMPLE_DIR="example"
+
 # recreate the example directory
-rm -rf example
-mkdir -p example
+rm -rf "$EXAMPLE_DIR"
+mkdir -p "$EXAMPLE_DIR"
 
 # Navigate to the example directory
-pushd example
+pushd "$EXAMPLE_DIR"
 
 # Execute the initialization scripts
 ../everything.sh
@@ -17,6 +19,6 @@ git log --format='%n--- %s' --stat --reverse > commits.txt
 popd
 
 # make sure exmple project is not a git repo, becuase we want it under our vc
-rm -rf example/.git
+rm -rf "$EXAMPLE_DIR/.git"
 
 echo "Example project initialized successfully!"

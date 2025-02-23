@@ -8,7 +8,7 @@ fi
 # Check if the POETRY_PROJECT_NAME environment variable is set
 if [[ -z "$POETRY_PROJECT_NAME" ]]; then
     echo "POETRY_PROJECT_NAME environment variable is not set. Using the current directory name as the project name."
-    POETRY_PROJECT_NAME=$(basename "$PWD")
+    POETRY_PROJECT_NAME=$(basename "$PWD" | tr '.' '-')
     export POETRY_PROJECT_NAME
 fi
 
@@ -16,10 +16,11 @@ fi
 poetry init --name "$POETRY_PROJECT_NAME" --no-interaction
 
 # Switch to non-package-mode
-sed -i '/^version =/c package-mode = false' pyproject.toml
+cat <<EOF >> pyproject.toml
 
-# Create an empty virtual environment
-poetry install
+[tool.poetry]
+package-mode = false
+EOF
 
 # add python stuff to gitignore
 echo "__pycache__/" >> .gitignore
