@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Check if Poetry is installed
 if ! command -v poetry &> /dev/null
 then
@@ -15,21 +17,15 @@ fi
 # Initialize a new Poetry project with the project name
 poetry init --name "$POETRY_PROJECT_NAME" --no-interaction
 
-# Switch to non-package-mode
-cat <<EOF >> pyproject.toml
+# Modify the existing [tool.poetry] section to add package-mode = false
+sed -i '/^\[tool.poetry\]/a package-mode = false' pyproject.toml
 
-[tool.poetry]
-package-mode = false
-EOF
-
-# add python stuff to gitignore
 echo "__pycache__/" >> .gitignore
 
-# describe in the README
 cat <<EOF >> "README.md"
 # $POETRY_PROJECT_NAME
 
-## Python deps
+## Python dependencies
 
 This project uses Poetry for dependency management. To install the dependencies, run:
 
