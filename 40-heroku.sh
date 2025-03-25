@@ -15,9 +15,6 @@ cat > app.json <<EOL
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/moneymeets/python-poetry-buildpack.git"
-    },
-    {
       "url": "heroku/python"
     }
   ],
