@@ -15,7 +15,7 @@ if [[ -z "$POETRY_PROJECT_NAME" ]]; then
 fi
 
 # Initialize a new Poetry project with the project name
-poetry init --name "$POETRY_PROJECT_NAME" --no-interaction
+poetry init --name "$POETRY_PROJECT_NAME" --python ">=3.14,<4" --no-interaction
 
 # Modify the existing [tool.poetry] section to add package-mode = false
 sed -i '/^\[tool.poetry\]/a package-mode = false' pyproject.toml
