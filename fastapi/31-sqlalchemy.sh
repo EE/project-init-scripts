@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Install SQLAlchemy with async support
+poetry add 'sqlalchemy[asyncio]==*'
+poetry add 'asyncpg==*'
+
+# Create database configuration module
+cat > "$FASTAPI_PROJECT_NAME/database.py" <<EOF
+from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
+
+from .config import settings
+
+engine = create_async_engine(settings.database_url, echo=settings.debug)
+
+async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+async def get_db():
+    async with async_session() as session:
+        try:
+            yield session
+        finally:
+            await session.close()
+EOF
+
+# Create example model
+cat > "$FASTAPI_PROJECT_NAME/models.py" <<EOF
+from sqlalchemy import Column, Integer, String
+
+from .database import Base
+
+
+class Item(Base):
+    __tablename__ = "items"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    description = Column(String, nullable=True)
+EOF
+
+poetry run isort .
+git add --all
+git commit -m "Install and configure SQLAlchemy with async support"
