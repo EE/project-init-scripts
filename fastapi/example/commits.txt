@@ -5,8 +5,8 @@
 
  .gitignore     |  1 +
  README.md      | 11 +++++++++++
- pyproject.toml | 15 +++++++++++++++
- 3 files changed, 27 insertions(+)
+ pyproject.toml | 16 ++++++++++++++++
+ 3 files changed, 28 insertions(+)
 
 --- Install and configure Flake8 with flake8-pyproject
 
@@ -16,15 +16,15 @@
 
 --- Install and configure isort with flake8-isort
 
- poetry.lock    | 37 ++++++++++++++++++++++++++++++++++++-
+ poetry.lock    | 35 +++++++++++++++++++++++++++++++++++
  pyproject.toml | 10 +++++++++-
- 2 files changed, 45 insertions(+), 2 deletions(-)
+ 2 files changed, 44 insertions(+), 1 deletion(-)
 
 --- Install and configure pytest
 
- poetry.lock    | 92 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ poetry.lock    | 90 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  pyproject.toml |  6 +++-
- 2 files changed, 96 insertions(+), 2 deletions(-)
+ 2 files changed, 95 insertions(+), 1 deletion(-)
 
 --- Install pydantic-settings and configure environment
 
@@ -41,10 +41,10 @@
  example/__init__.py |   0
  example/config.py   |  12 ++
  example/main.py     |  14 ++
- poetry.lock         | 604 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ poetry.lock         | 599 +++++++++++++++++++++++++++++++++++++++++++++++++++-
  pyproject.toml      |   7 +-
  test_app.py         |  18 ++
- 7 files changed, 657 insertions(+), 6 deletions(-)
+ 7 files changed, 653 insertions(+), 5 deletions(-)
 
 --- Install and configure SQLAlchemy with async support
 
