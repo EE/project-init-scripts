@@ -5,39 +5,39 @@
 
  .gitignore     |  1 +
  README.md      | 11 +++++++++++
- pyproject.toml | 19 +++++++++++++++++++
- 3 files changed, 31 insertions(+)
+ pyproject.toml | 16 ++++++++++++++++
+ 3 files changed, 28 insertions(+)
 
 --- Install and configure Flake8 with flake8-pyproject
 
  poetry.lock    | 76 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- pyproject.toml | 10 ++++++++
- 2 files changed, 86 insertions(+)
+ pyproject.toml | 11 +++++++++
+ 2 files changed, 87 insertions(+)
 
 --- Install and configure isort with flake8-isort
 
- poetry.lock    | 37 ++++++++++++++++++++++++++++++++++++-
- pyproject.toml |  8 ++++++++
+ poetry.lock    | 35 +++++++++++++++++++++++++++++++++++
+ pyproject.toml | 10 +++++++++-
  2 files changed, 44 insertions(+), 1 deletion(-)
 
 --- Install and configure pytest
 
- poetry.lock    | 76 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
- pyproject.toml |  4 ++++
- 2 files changed, 79 insertions(+), 1 deletion(-)
+ poetry.lock    | 90 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ pyproject.toml |  6 +++-
+ 2 files changed, 95 insertions(+), 1 deletion(-)
 
 --- Initialize Django project
 
  example/__init__.py |   0
- example/asgi.py     |  17 +++++++
- example/settings.py | 124 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- example/urls.py     |  23 ++++++++++
- example/wsgi.py     |  17 +++++++
+ example/asgi.py     |  17 ++++++++
+ example/settings.py | 118 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ example/urls.py     |  24 +++++++++++
+ example/wsgi.py     |  17 ++++++++
  manage.py           |  22 ++++++++++
- poetry.lock         |  86 +++++++++++++++++++++++++++++++++++-
- pyproject.toml      |   4 ++
+ poetry.lock         |  86 +++++++++++++++++++++++++++++++++++++-
+ pyproject.toml      |   6 ++-
  test_no_smoke.py    |   8 ++++
- 9 files changed, 300 insertions(+), 1 deletion(-)
+ 9 files changed, 296 insertions(+), 2 deletions(-)
 
 --- Configure Django settings with django-environ
 
@@ -72,30 +72,14 @@
 --- Install and configure Sentry
 
  example/settings.py |  8 +++++
- poetry.lock         | 90 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ poetry.lock         | 96 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
  pyproject.toml      |  3 +-
- 3 files changed, 99 insertions(+), 2 deletions(-)
+ 3 files changed, 105 insertions(+), 2 deletions(-)
 
 --- Configure the project for Heroku deployment
 
  Procfile       |  2 ++
- app.json       | 37 +++++++++++++++++++++++++++++++++++++
- poetry.lock    | 26 ++++++++++++++++++++++++--
+ app.json       | 34 ++++++++++++++++++++++++++++++++++
+ poetry.lock    | 27 +++++++++++++++++++++++++--
  pyproject.toml |  7 ++++++-
- 4 files changed, 69 insertions(+), 3 deletions(-)
-
---- Custom user model using UUID4 as the primary key
-
- example/settings.py              |  3 +++
- users/__init__.py                |  0
- users/apps.py                    |  6 ++++++
- users/migrations/0001_initial.py | 44 ++++++++++++++++++++++++++++++++++++++++
- users/migrations/__init__.py     |  0
- users/models.py                  |  8 ++++++++
- 6 files changed, 61 insertions(+)
-
---- feat: Add robots.txt view and test
-
- example/test_no_smoke.py | 5 +++++
- example/urls.py          | 3 +++
- 2 files changed, 8 insertions(+)
+ 4 files changed, 67 insertions(+), 3 deletions(-)
