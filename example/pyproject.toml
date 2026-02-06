@@ -2,9 +2,6 @@
 name = "example"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Jan Rydzewski",email = "flegmer@gmail.com"}
-]
 readme = "README.md"
 requires-python = ">=3.14,<4"
 dependencies = [

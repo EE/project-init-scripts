@@ -5,8 +5,8 @@
 
  .gitignore     |  1 +
  README.md      | 11 +++++++++++
- pyproject.toml | 16 ++++++++++++++++
- 3 files changed, 28 insertions(+)
+ pyproject.toml | 13 +++++++++++++
+ 3 files changed, 25 insertions(+)
 
 --- Install and configure Flake8 with flake8-pyproject
 

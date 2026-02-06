@@ -20,6 +20,9 @@ poetry init --name "$POETRY_PROJECT_NAME" --python ">=3.14,<4" --no-interaction
 # Modify the existing [tool.poetry] section to add package-mode = false
 sed -i '/^\[tool.poetry\]/a package-mode = false' pyproject.toml
 
+# Remove authors from pyproject.toml (handles both single line and multiline)
+python3 -c "import sys, re; sys.stdout.write(re.sub(r'(?ms)^authors = \[.*?\]\n?', '', sys.stdin.read()))" < pyproject.toml > pyproject.toml.tmp && mv pyproject.toml.tmp pyproject.toml
+
 echo "__pycache__/" >> .gitignore
 
 cat <<EOF >> "README.md"
