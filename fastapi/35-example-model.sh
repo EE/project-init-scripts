@@ -58,6 +58,9 @@ EOF
 sed -i '/^from fastapi import FastAPI/a from .example import router as example_router' "$FASTAPI_PROJECT_NAME/main.py"
 sed -i '/^app = FastAPI()/a app.include_router(example_router)' "$FASTAPI_PROJECT_NAME/main.py"
 
+# Add example model import to test file
+sed -i "/^from ${FASTAPI_PROJECT_NAME}.main import app/a from ${FASTAPI_PROJECT_NAME}.example import ExampleItem, _examples_db" "test_app.py"
+
 # Add example model tests
 cat >> "test_app.py" <<EOF
 
@@ -69,6 +72,7 @@ def test_create_example():
     assert data["name"] == "test"
     assert data["description"] == "a test item"
     assert "id" in data
+    assert data["id"] in _examples_db
 
 
 def test_list_examples():
@@ -78,10 +82,10 @@ def test_list_examples():
 
 
 def test_get_example():
-    create_response = client.post("/examples", json={"name": "lookup test"})
-    item_id = create_response.json()["id"]
+    item = ExampleItem(id=999, name="lookup test")
+    _examples_db[999] = item
 
-    response = client.get(f"/examples/{item_id}")
+    response = client.get("/examples/999")
     assert response.status_code == 200
     assert response.json()["name"] == "lookup test"
 
