@@ -5,31 +5,31 @@
 
  .gitignore     |  1 +
  README.md      | 11 +++++++++++
- pyproject.toml | 19 +++++++++++++++++++
- 3 files changed, 31 insertions(+)
+ pyproject.toml | 15 +++++++++++++++
+ 3 files changed, 27 insertions(+)
 
 --- Install and configure Flake8 with flake8-pyproject
 
  poetry.lock    | 76 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- pyproject.toml | 10 ++++++++
- 2 files changed, 86 insertions(+)
+ pyproject.toml | 11 +++++++++
+ 2 files changed, 87 insertions(+)
 
 --- Install and configure isort with flake8-isort
 
  poetry.lock    | 37 ++++++++++++++++++++++++++++++++++++-
- pyproject.toml |  8 ++++++++
- 2 files changed, 44 insertions(+), 1 deletion(-)
+ pyproject.toml | 10 +++++++++-
+ 2 files changed, 45 insertions(+), 2 deletions(-)
 
 --- Install and configure pytest
 
- poetry.lock    | 76 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
- pyproject.toml |  4 ++++
- 2 files changed, 79 insertions(+), 1 deletion(-)
+ poetry.lock    | 92 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml |  6 +++-
+ 2 files changed, 96 insertions(+), 2 deletions(-)
 
 --- Initialize minimal Flask application
 
- app.py         |  10 ++++
- app_test.py    |   6 ++
- poetry.lock    | 175 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ app.py         |  13 ++++
+ app_tests.py   |   7 ++
+ poetry.lock    | 204 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
  pyproject.toml |   1 +
- 4 files changed, 189 insertions(+), 3 deletions(-)
+ 4 files changed, 222 insertions(+), 3 deletions(-)

@@ -1,0 +1,75 @@
+
+--- Initial commit
+
+--- Initialize Poetry environment
+
+ .gitignore     |  1 +
+ README.md      | 11 +++++++++++
+ pyproject.toml | 15 +++++++++++++++
+ 3 files changed, 27 insertions(+)
+
+--- Install and configure Flake8 with flake8-pyproject
+
+ poetry.lock    | 76 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ pyproject.toml | 11 +++++++++
+ 2 files changed, 87 insertions(+)
+
+--- Install and configure isort with flake8-isort
+
+ poetry.lock    | 37 ++++++++++++++++++++++++++++++++++++-
+ pyproject.toml | 10 +++++++++-
+ 2 files changed, 45 insertions(+), 2 deletions(-)
+
+--- Install and configure pytest
+
+ poetry.lock    | 92 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml |  6 +++-
+ 2 files changed, 96 insertions(+), 2 deletions(-)
+
+--- Install pydantic-settings and configure environment
+
+ .gitignore     |   1 +
+ README.md      |   6 ++
+ example.env    |   3 +
+ poetry.lock    | 236 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml |   1 +
+ 5 files changed, 246 insertions(+), 1 deletion(-)
+
+--- Initialize FastAPI application
+
+ README.md           |   8 +
+ example/__init__.py |   0
+ example/config.py   |  12 ++
+ example/main.py     |  14 ++
+ poetry.lock         | 604 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml      |   7 +-
+ test_app.py         |  18 ++
+ 7 files changed, 657 insertions(+), 6 deletions(-)
+
+--- Install and configure SQLAlchemy with async support
+
+ example/database.py |  21 +++++
+ example/models.py   |  12 +++
+ poetry.lock         | 238 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml      |   4 +-
+ 4 files changed, 273 insertions(+), 2 deletions(-)
+
+--- Install and configure Alembic for database migrations
+
+ README.md              |  10 ++++
+ alembic.ini            | 149 +++++++++++++++++++++++++++++++++++++++++++++++++
+ alembic/README         |   1 +
+ alembic/env.py         |  69 +++++++++++++++++++++++
+ alembic/script.py.mako |  28 ++++++++++
+ poetry.lock            | 141 +++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml         |   3 +-
+ 7 files changed, 399 insertions(+), 2 deletions(-)
+
+--- Install and configure Sentry for FastAPI
+
+ example.env       |  2 ++
+ example/config.py |  2 ++
+ example/main.py   | 10 +++++++
+ poetry.lock       | 86 +++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ pyproject.toml    |  3 +-
+ 5 files changed, 100 insertions(+), 3 deletions(-)
