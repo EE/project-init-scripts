@@ -1,12 +1,39 @@
 name: Run tests
 on: [push, pull_request]
 jobs:
+
+  check-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - uses: snok/install-poetry@v1
+        with:
+          poetry-version: "2.2.1"
+      - name: Configure git
+        run: |
+          git config --global user.email "me@example.com"
+          git config --global user.name "My Name"
+      - name: Regenerate examples
+        run: |
+          ./example.sh
+          (cd flask && ./example.sh)
+          (cd fastapi && ./example.sh)
+      - name: Check for changes (excluding lockfiles)
+        run: git diff --exit-code -- . ':!**/poetry.lock' ':!**/commits.txt'
+
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
       - uses: snok/install-poetry@v1
+        with:
+          poetry-version: "2.2.1"
       - name: Configure git
         run: |
           git config --global user.email "me@example.com"

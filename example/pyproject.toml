@@ -2,11 +2,8 @@
 name = "example"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Jan Rydzewski",email = "flegmer@gmail.com"}
-]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14,<4"
 dependencies = [
     "django",
     "django-environ",
@@ -21,16 +18,14 @@ dependencies = [
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry]
-package-mode = false
-
-[tool.poetry.group.dev.dependencies]
-flake8 = "*"
-flake8-pyproject = "*"
-flake8-isort = "*"
-pytest = "*"
-pytest-django = "*"
-
+[dependency-groups]
+dev = [
+    "flake8",
+    "flake8-pyproject",
+    "flake8-isort",
+    "pytest",
+    "pytest-django"
+]
 
 [tool.flake8]
 exclude = [

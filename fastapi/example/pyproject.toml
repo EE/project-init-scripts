@@ -2,10 +2,8 @@
 name = "example"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "My Name",email = "me@example.com"}
-]
-requires-python = ">=3.12"
+readme = "README.md"
+requires-python = ">=3.14,<4"
 dependencies = [
     "pydantic-settings",
     "fastapi",
