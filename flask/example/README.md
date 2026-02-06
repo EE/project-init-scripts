@@ -1,6 +1,6 @@
 # example
 
-## Python deps
+## Python dependencies
 
 This project uses Poetry for dependency management. To install the dependencies, run:
 

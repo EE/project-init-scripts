@@ -7,7 +7,13 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "flask"
+    "pydantic-settings",
+    "fastapi",
+    "uvicorn[standard]",
+    "sqlalchemy[asyncio]",
+    "asyncpg",
+    "alembic",
+    "sentry-sdk[fastapi]"
 ]
 
 
@@ -20,7 +26,8 @@ dev = [
     "flake8",
     "flake8-pyproject",
     "flake8-isort",
-    "pytest"
+    "pytest",
+    "httpx"
 ]
 
 [tool.flake8]
