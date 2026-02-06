@@ -9,6 +9,8 @@ jobs:
         with:
           python-version: "3.14"
       - uses: snok/install-poetry@v1
+        with:
+          poetry-version: "2.2.1"
       - name: Configure git
         run: |
           git config --global user.email "me@example.com"
@@ -28,6 +30,8 @@ jobs:
         with:
           python-version: "3.14"
       - uses: snok/install-poetry@v1
+        with:
+          poetry-version: "2.2.1"
       - name: Configure git
         run: |
           git config --global user.email "me@example.com"
