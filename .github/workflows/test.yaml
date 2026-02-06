@@ -14,6 +14,9 @@ jobs:
       - run: ./test.sh
         env:
           DATABASE_URL: postgresql://postgres:postgrespass@localhost:5432/testdb
+      - run: ./test.sh
+        working-directory: flask
+      - run: ./fastapi/test.sh
 
     services:
       postgres:
