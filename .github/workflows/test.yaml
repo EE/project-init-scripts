@@ -1,6 +1,7 @@
 name: Run tests
 on: [push, pull_request]
 jobs:
+
   check-examples:
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +22,8 @@ jobs:
           (cd flask && ./example.sh)
           (cd fastapi && ./example.sh)
       - name: Check for changes (excluding lockfiles)
-        run: git diff --exit-code -- . ':!**/poetry.lock'
+        run: git diff --exit-code -- . ':!**/poetry.lock' ':!**/commits.txt'
+
   test:
     runs-on: ubuntu-latest
     steps:
