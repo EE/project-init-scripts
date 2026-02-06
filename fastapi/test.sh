@@ -15,7 +15,6 @@ pushd "$tmp_dir"
 
 # Execute the pipeline script from the original directory
 "$original_dir/fastapi/everything.sh"
-success=$?
 
 poetry run flake8
 cp example.env .env

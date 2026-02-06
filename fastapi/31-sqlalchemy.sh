@@ -30,7 +30,8 @@ EOF
 
 # Create example model
 cat > "$FASTAPI_PROJECT_NAME/models.py" <<EOF
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import String
+from sqlalchemy.orm import Mapped, mapped_column
 
 from .database import Base
 
@@ -38,9 +39,9 @@ from .database import Base
 class Item(Base):
     __tablename__ = "items"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    description = Column(String, nullable=True)
+    id: Mapped[int] = mapped_column(primary_key=True, index=True)
+    name: Mapped[str] = mapped_column(String, index=True)
+    description: Mapped[str | None] = mapped_column(String, nullable=True)
 EOF
 
 poetry run isort .
