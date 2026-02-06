@@ -15,6 +15,7 @@ pushd "$tmp_dir"
 
 # Execute the pipeline script from the original directory
 "$original_dir/fastapi/everything.sh"
+source "$original_dir/fastapi/35-example-model.sh"
 
 poetry run flake8
 cp example.env .env
