@@ -17,6 +17,8 @@ jobs:
       - run: ./test.sh
         working-directory: flask
       - run: ./fastapi/test.sh
+        env:
+          DATABASE_URL: postgresql+asyncpg://postgres:postgrespass@localhost:5432/postgres
 
     services:
       postgres:
