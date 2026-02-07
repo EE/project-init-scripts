@@ -5,19 +5,24 @@ poetry add 'flask==*'
 
 # Create the main application file
 cat > "app.py" <<EOF
-from flask import Flask
+import os
 
+from dotenv import load_dotenv
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+load_dotenv()
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'changeme')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+
+db = SQLAlchemy(app)
 
 
 @app.route('/')
 def index():
     return 'Hello, World!'
-
-
-if __name__ == '__main__':
-    app.run()
 EOF
 
 # Create test file in root
