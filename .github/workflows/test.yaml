@@ -43,6 +43,8 @@ jobs:
           DATABASE_URL: postgresql://postgres:postgrespass@localhost:5432/testdb
       - run: ./test.sh
         working-directory: flask
+        env:
+          DATABASE_URL: postgresql://postgres:postgrespass@localhost:5432/testdb
       - run: ./fastapi/test.sh
         env:
           DATABASE_URL: postgresql+asyncpg://postgres:postgrespass@localhost:5432/postgres

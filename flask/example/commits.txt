@@ -16,20 +16,52 @@
 
 --- Install and configure isort with flake8-isort
 
- poetry.lock    | 35 +++++++++++++++++++++++++++++++++++
+ poetry.lock    | 37 ++++++++++++++++++++++++++++++++++++-
  pyproject.toml | 10 +++++++++-
- 2 files changed, 44 insertions(+), 1 deletion(-)
+ 2 files changed, 45 insertions(+), 2 deletions(-)
 
 --- Install and configure pytest
 
- poetry.lock    | 90 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ poetry.lock    | 92 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
  pyproject.toml |  6 +++-
- 2 files changed, 95 insertions(+), 1 deletion(-)
+ 2 files changed, 96 insertions(+), 2 deletions(-)
+
+--- Install python-dotenv and configure environment
+
+ .gitignore     |  1 +
+ README.md      |  6 ++++++
+ example.env    |  3 +++
+ poetry.lock    | 17 ++++++++++++++++-
+ pyproject.toml |  1 +
+ 5 files changed, 27 insertions(+), 1 deletion(-)
 
 --- Initialize minimal Flask application
 
- app.py         |  13 ++++
+ app.py         |  18 +++++
  app_tests.py   |   7 ++
  poetry.lock    | 204 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
- pyproject.toml |   1 +
- 4 files changed, 222 insertions(+), 3 deletions(-)
+ pyproject.toml |   3 +-
+ 4 files changed, 228 insertions(+), 4 deletions(-)
+
+--- Install and configure Flask-SQLAlchemy
+
+ app.py         |   1 +
+ models.py      |   1 +
+ poetry.lock    | 232 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml |   4 +-
+ 4 files changed, 236 insertions(+), 2 deletions(-)
+
+--- Install and configure Flask-Migrate for database migrations
+
+ README.md      | 10 ++++++++++
+ app.py         |  2 ++
+ poetry.lock    | 63 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml |  3 ++-
+ 4 files changed, 76 insertions(+), 2 deletions(-)
+
+--- Install and configure Flask-Admin
+
+ app.py         |  2 ++
+ poetry.lock    | 54 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ pyproject.toml |  3 ++-
+ 3 files changed, 57 insertions(+), 2 deletions(-)
